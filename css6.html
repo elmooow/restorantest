@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EL Aquila's</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('header.jpeg') no-repeat center center/cover;
+            height: 100vh;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 60px;
+            margin: 0;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        header p {
+            font-size: 24px;
+            margin: 20px 0;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #e63946;
+        }
+
+        .menu-section {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: #f8f9fa;
+        }
+
+        .menu-section h2 {
+            font-size: 36px;
+            color: #e63946;
+            margin-bottom: 50px;
+            position: relative;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .menu-item {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .menu-item .content {
+            padding: 20px;
+        }
+
+        .menu-item h3 {
+            margin: 0 0 10px;
+            color: #343a40;
+            font-size: 24px;
+        }
+
+        .menu-item p {
+            margin: 0 0 15px;
+            color: #6c757d;
+            font-size: 16px;
+        }
+
+        .menu-item span {
+            font-size: 18px;
+            font-weight: bold;
+            color: #e63946;
+        }
+
+        .parallax {
+            background: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092') no-repeat center center/cover;
+            height: 300px;
+            margin: 50px 0;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .contact-section {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: #343a40;
+            color: #fff;
+        }
+
+        .contact-section h2 {
+            font-size: 36px;
+            color: #e63946;
+            margin-bottom: 50px;
+        }
+
+        .contact-section p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .contact-section a {
+            color: #e63946;
+            text-decoration: none;
+            font-size: 20px;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .contact-section a:hover {
+            color: #fff;
+        }
+
+        .floating-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #e63946;
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            z-index: 20;
+            transition: transform 0.3s;
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 40px;
+            }
+
+            header p {
+                font-size: 18px;
+            }
+
+            .menu-item img {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to EL Aquila's</h1>
+        <p>Discover the finest dishes and drinks</p>
+    </header>
+
+    <nav>
+        <a href="#about">About Us</a>
+        <a href="#menu">Menu</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about" class="menu-section">
+        <h2>About EL Aquila's</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
+    </section>
+
+    <div class="parallax">
+        "Taste the Difference"
+    </div>
+
+    <section id="menu" class="menu-section">
+        <h2>Our Special Menu</h2>
+        <h1>Food Menu</h1>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="martabak-manis.jpg" alt="Martabak Manis">
+                <div class="content">
+                    <h3>Martabak Manis</h3>
+                    <p>Delicious traditional Indonesian sweet pancake filled with chocolate, cheese, or peanuts.</p>
+                    <span>$5.99</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="nasi-goreng.jpeg" alt="Nasi Goreng">
+                <div class="content">
+                    <h3>Nasi Goreng</h3>
+                    <p>Classic Indonesian fried rice served with a choice of chicken, prawns, or vegetables.</p>
+                    <span>$7.99</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="sate-ayam.jpeg" alt="Sate Ayam">
+                <div class="content">
+                    <h3>Sate Ayam</h3>
+                    <p>Grilled chicken skewers served with a traditional peanut sauce.</p>
+                    <span>$6.99</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="rendang.jpeg" alt="Rendang">
+                <div class="content">
+                    <h3>Nasi Padang</h3>
+                    <p>Refreshing iced sweet tea, perfect for any meal.</p>
+                    <span>$1.99</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="beef.jpeg" alt="Beef Steak">
+                <div class="content">
+                    <h3>Beef Steak</h3>
+                    <p>Refreshing iced sweet tea, perfect for any meal.</p>
+                    <span>$1.99</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="pizza.jpeg" alt="Pizza">
+                <div class="content">
+                    <h3>Italian Pizza</h3>
+                    <p>Refreshing iced sweet tea, perfect for any meal.</p>
+                    <span>$1.99</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="ramen.jpeg" alt="Ramen">
+                <div class="content">
+                    <h3>Japanese Ramen</h3>
+                    <p>Refreshing iced sweet tea, perfect for any meal.</p>
+                    <span>$1.99</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="sushi.jpeg" alt="Sushi">
+                <div class="content">
+                    <h3>Japanese Sushi</h3>
+                    <p>Refreshing iced sweet tea, perfect for any meal.</p>
+                    <span>$1.99</span>
+                </div>
+            </div>
+        </div>
+        <h1>Drink's Menu</h1>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="milkshake.jpeg" alt="Milk Shake">
+                <div class="content">
+                    <h3>Milk Shake</h3>
+                    <p>Delicious traditional Indonesian sweet pancake filled with chocolate, cheese, or peanuts.</p>
+                    <span>$5.99</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="nasi-goreng.jpeg" alt="Nasi Goreng">
+                <div class="content">
+                    <h3>Nasi Goreng</h3>
+                    <p>Classic Indonesian fried rice served with a choice of chicken, prawns, or vegetables.</p>
+                    <span>$7.99</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="fruit juice.jpeg" alt="Fruit Juice">
+                <div class="content">
+                    <h3>Fruit Juice</h3>
+                    <p>Grilled chicken skewers served with a traditional peanut sauce.</p>
+                    <span>$6.99</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="es campur.jpeg" alt="Es campur">
+                <div class="content">
+                    <h3>Es Campur </h3>
+                    <p>Refreshing iced sweet tea, perfect for any meal.</p>
+                    <span>$1.99</span>
+                </div>
+            </div>
+        </div>
+            <h1>Dessert Menu</h1>
+           <div class="menu-grid">
+            <div class="menu-item">
+                <img src="kue lapis.jpeg" alt="Kue Lapis">
+                <div class="content">
+                    <h3>Indonesian Kue Lapis</h3>
+                    <p>Delicious traditional Indonesian sweet pancake filled with chocolate, cheese, or peanuts.</p>
+                    <span>$5.99</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="klepon.jpeg" alt="Klepon">
+                <div class="content">
+                    <h3>Indonesian Klepon</h3>
+                    <p>Classic Indonesian fried rice served with a choice of chicken, prawns, or vegetables.</p>
+                    <span>$7.99</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="bingsu.jpeg" alt="Bingsu">
+                <div class="content">
+                    <h3>Korean Bingsu</h3>
+                    <p>Grilled chicken skewers served with a traditional peanut sauce.</p>
+                    <span>$6.99</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="croissant.jpeg" alt="croissant">
+                <div class="content">
+                    <h3>Croissant</h3>
+                    <p>Refreshing iced sweet tea, perfect for any meal.</p>
+                    <span>$1.99</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="parallax">
+        "Only the Freshest Ingredients"
+    </div>
+
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Stay connected with us through our social media channels.</p>
+        <a href="mailto:info@elaquilas.com">Email</a>
+        <a href="https://www.instagram.com/elaquilas">Instagram</a>
+        <a href="https://www.facebook.com/elaquilas">Facebook</a>
+    </section>
+
+    <div class="floating-btn" onclick="window.location.href='#contact'">
+        ✉️
+    </div>
+
+</body>
+</html>
